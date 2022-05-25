@@ -26,9 +26,9 @@ jobs:
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/main'
         with:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           external_repository: gakkun89/gakkun89.github.io
-          publish_branch: master
+          publish_branch: main
           publish_dir: ./public
