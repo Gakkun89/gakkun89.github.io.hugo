@@ -29,6 +29,6 @@ jobs:
         if: github.ref == 'refs/heads/master'
         with:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          external_repository: gakkun89.github.io
+          external_repository: gakkun89/gakkun89.github.io
           publish_branch: master
           publish_dir: ./public
