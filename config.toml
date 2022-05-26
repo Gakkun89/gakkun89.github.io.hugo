@@ -64,8 +64,8 @@ paginate = 5
   [languages.en]
     languageName = "English"
     title = "Gakked"
-    subtitle = "A simple, retro theme for Hugo"
-    owner = ""
+    subtitle = "A simple blog by a simple bloke"
+    owner = "Mike Warren"
     keywords = ""
     copyright = ""
     menuMore = "Show more"
