@@ -61,6 +61,16 @@ Unless you are Twitter scale it doesn't matter.
 
 Of course there are differences between using the different methods against different data types ([as can be seen here in this comprehensive SO answer](https://stackoverflow.com/a/20814251/8459243)). However for most projects these presence checks will not be a performance bottle neck.
 
+For example my favoured `empty?` is actually 2x slower than using `empty?`, this can easily be seen by looking at the [source code](https://github.com/rails/rails/blob/e2efc667dea886e71c33e3837048e34b7a1fe470/activesupport/lib/active_support/core_ext/object/blank.rb#L18):
+```ruby
+
+def blank?
+  respond_to?(:empty?) ? !!empty? : !self
+end
+```
+
+However in most projects this performance hit will not be noticable.
+
 One caveat to the above statement is when dealing with `ActiveRecord` checks which hit the DB. The topic of performance in those queries is quite involved and is expertly handled in [this post](https://www.ombulabs.com/blog/benchmark/performance/rails/present-vs-any-vs-exists.html) which I would encourage anyone interested to read.
 
 `Thats all folks`
